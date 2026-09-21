@@ -1,0 +1,8 @@
+case_id,model,kn,rt,seed,figure,source
+FAST_00,HS,20,0.2,104729,Figure5,new_checkpoint
+FAST_01,BGK,20,0.2,104729,Figure5,new_checkpoint
+FAST_02,SHAKHOV,20,0.2,104729,Figure5,new_checkpoint
+FAST_03,SHAKHOV,5,0.5,104729,Figure6,new_checkpoint
+FAST_04,SHAKHOV,10,0.5,104729,Figure6,new_checkpoint
+FAST_05,SHAKHOV,20,0.5,104729,Figure6,new_checkpoint
+FAST_06,HS,30,0.5,104729,Figure2d,new_checkpoint

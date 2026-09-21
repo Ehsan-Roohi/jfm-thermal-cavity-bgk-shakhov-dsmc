@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.matplotlib/
+.test_deps/
+run_output/
+slurm/
+LAST_SUBMISSION*.env
+*.npy
+*.npz
+*.dat
+*_restart_step*/

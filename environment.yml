@@ -1,0 +1,9 @@
+name: jfm-thermal-cavity
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - numpy
+  - numba
+  - cupy
+  - matplotlib

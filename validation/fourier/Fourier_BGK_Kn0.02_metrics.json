@@ -1,0 +1,15 @@
+{
+  "mode": "BGK",
+  "Kn_paper": 0.02,
+  "T_left_K": 1020.0,
+  "T_right_K": 980.0,
+  "interior_mean_qx_W_m2": 414.0818222858851,
+  "expected_q_shakhov_over_q_bgk_near_continuum": 1.5,
+  "particles": 200000,
+  "cells": 200,
+  "steps": 100000,
+  "samples": 37500,
+  "wall_clock_seconds": 936.3887696266174,
+  "kn_definition": "1/(sqrt(2)*n0*pi*d^2*L)",
+  "relaxation_frequency": "n*pi*d^2*sqrt(pi*kB*T/m)"
+}

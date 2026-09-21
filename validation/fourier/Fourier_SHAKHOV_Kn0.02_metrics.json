@@ -1,0 +1,21 @@
+{
+  "mode": "SHAKHOV",
+  "Kn_paper": 0.02,
+  "T_left_K": 1020.0,
+  "T_right_K": 980.0,
+  "interior_mean_qx_W_m2": 642.9288940608081,
+  "expected_q_shakhov_over_q_bgk_near_continuum": 1.5,
+  "particles": 200000,
+  "cells": 200,
+  "steps": 100000,
+  "samples": 37500,
+  "wall_clock_seconds": 2100.472687482834,
+  "kn_definition": "1/(sqrt(2)*n0*pi*d^2*L)",
+  "relaxation_frequency": "n*pi*d^2*sqrt(pi*kB*T/m)",
+  "shakhov_sampling_diagnostics": {
+    "selected_relaxations": 652446925,
+    "negative_weight_candidates": 0,
+    "above_limiter_candidates": 0,
+    "max_trial_fallbacks": 1
+  }
+}

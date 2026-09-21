@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, cite both this repository and the associated Journal of Fluid Mechanics article."
+title: "Thermal rarefied-gas cavity: BGK, Shakhov, and DSMC reproducibility code"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Ben-Adva
+    given-names: D.
+  - family-names: Roohi
+    given-names: E.
+  - family-names: Manela
+    given-names: A.
+repository-code: "https://github.com/Ehsan-Roohi/jfm-thermal-cavity-bgk-shakhov-dsmc"
+preferred-citation:
+  type: article
+  title: "Analysis of thermally-induced rarefied gas flow in a square cavity: From near-free-molecular to near-continuum conditions"
+  authors:
+    - family-names: Ben-Adva
+      given-names: D.
+    - family-names: Roohi
+      given-names: E.
+    - family-names: Manela
+      given-names: A.
+  journal: Journal of Fluid Mechanics
+  year: 2026
+  notes: "Accepted at Journal of Fluid Mechanics."
