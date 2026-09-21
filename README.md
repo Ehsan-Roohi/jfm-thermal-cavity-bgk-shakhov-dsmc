@@ -7,9 +7,7 @@ accepted manuscript:
 > rarefied gas flow in a square cavity: From near-free-molecular to
 > near-continuum conditions,” accepted at *Journal of Fluid Mechanics*.
 
-The repository preserves the final reviewer-response workflow recovered from
-the University of Massachusetts Amherst Unity cluster. It contains the exact
-restartable solver bytes used for the final production runs, the seven case
+The repository contains the restartable solver bytes used for the final production runs, the seven case
 definitions, Slurm launch scripts, restart-contract tests, Fourier-flow
 validation, and compact result summaries. Multi-gigabyte particle restart
 states and raw fields remain on the cluster and are intentionally excluded.
