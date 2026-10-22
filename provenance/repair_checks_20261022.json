@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-22T18:10:55.246714+00:00",
+  "base_commit": "1e4a8bed3e8433813695c090383d67f1cc6eb872",
+  "checks_passed": [
+    "Python syntax compilation of solvers, tools, tests and validation drivers",
+    "test_shakhov_moments.py: actual kernel Gaussian mass, momentum, energy and heat-flux moments at two quadrature orders and three Prandtl values",
+    "test_validation_bundle.py: original/bundled SHA256, shared-module exports and recovered three-seed conductivity statistics",
+    "test_bundle.py",
+    "test_restart_contract.py",
+    "test_restart_roundtrip.py including legacy Shakhov rejection",
+    "test_summary_e2e.py",
+    "tools/audit_publication.py",
+    "git diff --check"
+  ],
+  "fresh_gpu_run_performed": false,
+  "cluster_sources_or_jobs_modified": false,
+  "historical_result_bytes_changed": false,
+  "corrected_production_sha256": "e05ffd201443333143ceb3ce6b86c34eb30d228863fe42cacdfd1f878b32fcd1",
+  "recovered_shared_module_sha256": "ade0824c20779d325a57da6d76ec9976fd0d52ca7493ca1dd34276002a6f87bc"
+}

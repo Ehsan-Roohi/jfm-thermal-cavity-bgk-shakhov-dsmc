@@ -1,0 +1,26 @@
+{
+  "solver_version": "2026-07-22-homogeneous-shakhov-v1",
+  "production_kernel_version": "2026-07-22-wallfix-shakhov-v3",
+  "mode": "SHAKHOV",
+  "seed": 42,
+  "cells": 128,
+  "particles_per_cell": 8192,
+  "particles": 1048576,
+  "steps": 120,
+  "nu_dt": 0.03,
+  "selection_probability": 0.029554466451491845,
+  "Prandtl": 0.6666666666666666,
+  "exact_discrete_heat_flux_factor_per_step": 0.9802970223656721,
+  "expected_relaxation_rate_per_s": 29901.77673183003,
+  "measured_relaxation_rate_per_s": 31747.940300160593,
+  "relative_error_relaxation_rate": 0.061740932148869575,
+  "pass_8_percent_rate_tolerance": true,
+  "initial_qx_W_m2": 82.19954389879611,
+  "fit_points": 89,
+  "shakhov_sampling_diagnostics": {
+    "selected_relaxations": 3714180,
+    "negative_weight_candidates": 0,
+    "above_limiter_candidates": 0,
+    "max_trial_fallbacks": 0
+  }
+}

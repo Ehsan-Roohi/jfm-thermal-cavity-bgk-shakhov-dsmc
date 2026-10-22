@@ -1,0 +1,327 @@
+{
+  "retrieved_on": "2026-10-22",
+  "source_host": "login.unityhpc.org",
+  "source_root": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3",
+  "files": [
+    {
+      "relative_path": "JFM_reviewer_quarter_domain.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/JFM_reviewer_quarter_domain.py",
+      "size": 36478,
+      "sha256": "ade0824c20779d325a57da6d76ec9976fd0d52ca7493ca1dd34276002a6f87bc",
+      "mtime": 1784716214.0,
+      "bundled_path": "solver/JFM_reviewer_quarter_domain.py",
+      "bundled_sha256": "ade0824c20779d325a57da6d76ec9976fd0d52ca7493ca1dd34276002a6f87bc",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "JFM_shakhov_fourier_validation.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/JFM_shakhov_fourier_validation.py",
+      "size": 11480,
+      "sha256": "816a42defc2e746cf2a7af870ce8725595b9369f64aa8be5c691accf48b3f139",
+      "mtime": 1784716233.0,
+      "bundled_path": "validation/fourier/JFM_shakhov_fourier_validation.py",
+      "bundled_sha256": "8bb3e8a23b3ad818876a79f5e3a3e85ee52df1ccff5ba10e6f25117c51f17129",
+      "change": "relocated import path only"
+    },
+    {
+      "relative_path": "JFM_hardsphere_fourier_validation.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/JFM_hardsphere_fourier_validation.py",
+      "size": 19793,
+      "sha256": "73577779516ed7743e63fe68929a9eed05894d55c03c01e9a3b6c93152ac52bb",
+      "mtime": 1784812731.0,
+      "bundled_path": "validation/fourier/JFM_hardsphere_fourier_validation.py",
+      "bundled_sha256": "39ad0db8ea2638c9463a2817ec11a06c9d90e2bd5aa08263cf3ed4dfe726e302",
+      "change": "relocated import path only"
+    },
+    {
+      "relative_path": "JFM_shakhov_homogeneous_validation.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/JFM_shakhov_homogeneous_validation.py",
+      "size": 7332,
+      "sha256": "5d9357c7d42ca781c6adfecc495cbeb89353b22eef642cd8ec7128db5dbc7522",
+      "mtime": 1784716318.0,
+      "bundled_path": "validation/homogeneous/JFM_shakhov_homogeneous_validation.py",
+      "bundled_sha256": "df41e930aab811f867e07d4ed712a6e0f9b1a70acd1b3d34c84635307a1a90cb",
+      "change": "relocated import path only"
+    },
+    {
+      "relative_path": "summarize_fourier_validation.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/summarize_fourier_validation.py",
+      "size": 7125,
+      "sha256": "86e959b5b19cc7f4e48530149a812d6eecce028eabb76b8f5f3bb1b68aa2523e",
+      "mtime": 1784716275.0,
+      "bundled_path": "validation/fourier/summarize_fourier_validation.py",
+      "bundled_sha256": "86e959b5b19cc7f4e48530149a812d6eecce028eabb76b8f5f3bb1b68aa2523e",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "summarize_hardsphere_fourier.py",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/summarize_hardsphere_fourier.py",
+      "size": 11188,
+      "sha256": "13b89365ecc535ea70329cec6ff25c2caf1b2feaf52072eef3659db27840ded3",
+      "mtime": 1784812649.0,
+      "bundled_path": "validation/fourier/summarize_hardsphere_fourier.py",
+      "bundled_sha256": "13b89365ecc535ea70329cec6ff25c2caf1b2feaf52072eef3659db27840ded3",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed271828_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed271828_metrics.json",
+      "size": 1277,
+      "sha256": "f28b9c3eef35df2d5811d3debe7719c5f56ba3891d8c61c4d7748d2d45319ade",
+      "mtime": 1784747426.6346912,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed271828_metrics.json",
+      "bundled_sha256": "f28b9c3eef35df2d5811d3debe7719c5f56ba3891d8c61c4d7748d2d45319ade",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed271828_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed271828_profile.csv",
+      "size": 20398,
+      "sha256": "7e7e15d7ac150730b96b58e6867292feb54bb2c92ac569aac8ff76c17c132609",
+      "mtime": 1784747426.6346912,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed271828_profile.csv",
+      "bundled_sha256": "7e7e15d7ac150730b96b58e6867292feb54bb2c92ac569aac8ff76c17c132609",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed314159_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed314159_metrics.json",
+      "size": 1274,
+      "sha256": "410698c355a097e67775d0632ec7835feda0e02273e4eb334aea320f476398b7",
+      "mtime": 1784747062.2304385,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed314159_metrics.json",
+      "bundled_sha256": "410698c355a097e67775d0632ec7835feda0e02273e4eb334aea320f476398b7",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed314159_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed314159_profile.csv",
+      "size": 20274,
+      "sha256": "c981d8bda8bfb8a2fbb35d6f3133af8987a13ae30d6fe6f5d26ee5918067d217",
+      "mtime": 1784747062.2264383,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed314159_profile.csv",
+      "bundled_sha256": "c981d8bda8bfb8a2fbb35d6f3133af8987a13ae30d6fe6f5d26ee5918067d217",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed42_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed42_metrics.json",
+      "size": 1273,
+      "sha256": "8808ce306d42407797acb15b354a478dac1b8ed4a109e5f983bafaece4bf91a7",
+      "mtime": 1784747725.2872944,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed42_metrics.json",
+      "bundled_sha256": "8808ce306d42407797acb15b354a478dac1b8ed4a109e5f983bafaece4bf91a7",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_BGK_Kn0.02_seed42_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_BGK_Kn0.02_seed42_profile.csv",
+      "size": 20285,
+      "sha256": "fd2719f55f774d9d4deceed4595b00348af8f105f45434c03cc755d205d08f3e",
+      "mtime": 1784747725.2872944,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_BGK_Kn0.02_seed42_profile.csv",
+      "bundled_sha256": "fd2719f55f774d9d4deceed4595b00348af8f105f45434c03cc755d205d08f3e",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_ensemble_Kn0.02_summary.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_ensemble_Kn0.02_summary.csv",
+      "size": 1379,
+      "sha256": "2fb038a6ffbbf51436ec9d084386c1257bf23233546dc9a827c53f7821aff42c",
+      "mtime": 1784812024.560212,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_ensemble_Kn0.02_summary.csv",
+      "bundled_sha256": "2fb038a6ffbbf51436ec9d084386c1257bf23233546dc9a827c53f7821aff42c",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_ensemble_Kn0.02_summary.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_ensemble_Kn0.02_summary.json",
+      "size": 1543,
+      "sha256": "d5327505bb46fcc15856a2c77ef12e4450fe9ddd6fa2a2c9de2f3ff60db1648c",
+      "mtime": 1784812024.5562117,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_ensemble_Kn0.02_summary.json",
+      "bundled_sha256": "d5327505bb46fcc15856a2c77ef12e4450fe9ddd6fa2a2c9de2f3ff60db1648c",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed271828_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed271828_metrics.json",
+      "size": 1463,
+      "sha256": "725b8252e1010df58bfc56f05fab6045af9a0a08e9253342333f54a286be8e31",
+      "mtime": 1784779308.270528,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed271828_metrics.json",
+      "bundled_sha256": "725b8252e1010df58bfc56f05fab6045af9a0a08e9253342333f54a286be8e31",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed271828_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed271828_profile.csv",
+      "size": 20690,
+      "sha256": "479d0fa87793b4fee9d8b588c761024466bdd062ad452aa184ba17ddb19ff561",
+      "mtime": 1784779308.270528,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed271828_profile.csv",
+      "bundled_sha256": "479d0fa87793b4fee9d8b588c761024466bdd062ad452aa184ba17ddb19ff561",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed314159_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed314159_metrics.json",
+      "size": 1462,
+      "sha256": "5d7d43f85a9afe0be95214e8d794c3360e29c4a9f78c43e56317ef97f9e7e651",
+      "mtime": 1784780120.0996554,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed314159_metrics.json",
+      "bundled_sha256": "5d7d43f85a9afe0be95214e8d794c3360e29c4a9f78c43e56317ef97f9e7e651",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed314159_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed314159_profile.csv",
+      "size": 20392,
+      "sha256": "00085c5805df864207b02d44a3e73c5aeb45f91da2eb8380288297c7f771e79e",
+      "mtime": 1784780120.0956552,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed314159_profile.csv",
+      "bundled_sha256": "00085c5805df864207b02d44a3e73c5aeb45f91da2eb8380288297c7f771e79e",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed42_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed42_metrics.json",
+      "size": 1463,
+      "sha256": "615e55b7519a701e2d6861df31e0256ec131eb714da43f371058730be6c9bf47",
+      "mtime": 1784780568.2565672,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed42_metrics.json",
+      "bundled_sha256": "615e55b7519a701e2d6861df31e0256ec131eb714da43f371058730be6c9bf47",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed42_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_corrected/Fourier_SHAKHOV_Kn0.02_seed42_profile.csv",
+      "size": 20593,
+      "sha256": "21ffb36c62de4cca84f58b3e472a4e36eec437c41808ae4287a4b3524a25e357",
+      "mtime": 1784780568.2565672,
+      "bundled_path": "validation/fourier/corrected_results/Fourier_SHAKHOV_Kn0.02_seed42_profile.csv",
+      "bundled_sha256": "21ffb36c62de4cca84f58b3e472a4e36eec437c41808ae4287a4b3524a25e357",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_metrics.json",
+      "size": 2442,
+      "sha256": "90f413b5e3480c947d6f99682daddf0934b5c7fb799861503669d4d4f8785725",
+      "mtime": 1784816257.8269753,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_metrics.json",
+      "bundled_sha256": "90f413b5e3480c947d6f99682daddf0934b5c7fb799861503669d4d4f8785725",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_profile.csv",
+      "size": 20604,
+      "sha256": "6e2401cee9bb4b52e47994c23bb90eed90da4656a45ba335f5f39aab031fee07",
+      "mtime": 1784816257.8229752,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed271828_profile.csv",
+      "bundled_sha256": "6e2401cee9bb4b52e47994c23bb90eed90da4656a45ba335f5f39aab031fee07",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_metrics.json",
+      "size": 2428,
+      "sha256": "3033cc4392282f22b4a8df5d22ab3e879e25ad0be9d2299f7921e06fd6cb20a3",
+      "mtime": 1784816250.1425493,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_metrics.json",
+      "bundled_sha256": "3033cc4392282f22b4a8df5d22ab3e879e25ad0be9d2299f7921e06fd6cb20a3",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_profile.csv",
+      "size": 20560,
+      "sha256": "43db6d4089931b9ee1dcef787d1f113affade8d051b9af427a203adf9ad49ac5",
+      "mtime": 1784816250.138549,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed314159_profile.csv",
+      "bundled_sha256": "43db6d4089931b9ee1dcef787d1f113affade8d051b9af427a203adf9ad49ac5",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_metrics.json",
+      "size": 2429,
+      "sha256": "5232baa95a3eed6bcbf8e44ca975d30575a07a1a91a7f2ebf5ec4b582178fae6",
+      "mtime": 1784816219.0928283,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_metrics.json",
+      "bundled_sha256": "5232baa95a3eed6bcbf8e44ca975d30575a07a1a91a7f2ebf5ec4b582178fae6",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_profile.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_profile.csv",
+      "size": 20549,
+      "sha256": "db10acc2978660826258918571d5c12a71fa6f7767dce77474ed8ba996beab6c",
+      "mtime": 1784816219.0888278,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_DSMC_Kn0.02_seed42_profile.csv",
+      "bundled_sha256": "db10acc2978660826258918571d5c12a71fa6f7767dce77474ed8ba996beab6c",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.csv",
+      "size": 2108,
+      "sha256": "a001a042fd442fe5904bacbf13775a64b0a9d332f5465f7dab933db1266bfb99",
+      "mtime": 1784816292.672907,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.csv",
+      "bundled_sha256": "a001a042fd442fe5904bacbf13775a64b0a9d332f5465f7dab933db1266bfb99",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "fourier_hardsphere/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/fourier_hardsphere/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.json",
+      "size": 2361,
+      "sha256": "5976baf4f752265656897cc6706aa11e8ee82928c824368f9a28a1f0c0c09160",
+      "mtime": 1784816292.672907,
+      "bundled_path": "validation/fourier/hardsphere_results/Fourier_HARD_SPHERE_ensemble_Kn0.02_summary.json",
+      "bundled_sha256": "5976baf4f752265656897cc6706aa11e8ee82928c824368f9a28a1f0c0c09160",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "homogeneous_validation/Homogeneous_BGK_seed42_history.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/homogeneous_validation/Homogeneous_BGK_seed42_history.csv",
+      "size": 10149,
+      "sha256": "bacb7f55b1b26a046eaca709355ffacf1d8e1be4cf631a06fb282519f3838825",
+      "mtime": 1784723026.2577121,
+      "bundled_path": "validation/homogeneous/results/Homogeneous_BGK_seed42_history.csv",
+      "bundled_sha256": "bacb7f55b1b26a046eaca709355ffacf1d8e1be4cf631a06fb282519f3838825",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "homogeneous_validation/Homogeneous_BGK_seed42_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/homogeneous_validation/Homogeneous_BGK_seed42_metrics.json",
+      "size": 658,
+      "sha256": "5f84938fb3adf3d0710adf9b57fdecb9a3c5d10ac45bd424e9f24a6eaa10340e",
+      "mtime": 1784723026.2617123,
+      "bundled_path": "validation/homogeneous/results/Homogeneous_BGK_seed42_metrics.json",
+      "bundled_sha256": "5f84938fb3adf3d0710adf9b57fdecb9a3c5d10ac45bd424e9f24a6eaa10340e",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "homogeneous_validation/Homogeneous_SHAKHOV_seed42_history.csv",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/homogeneous_validation/Homogeneous_SHAKHOV_seed42_history.csv",
+      "size": 10114,
+      "sha256": "846f62b814e9920ef5d55f69e41f686a785857a879c8835d7c61deafb5e9f8ba",
+      "mtime": 1784723036.5982862,
+      "bundled_path": "validation/homogeneous/results/Homogeneous_SHAKHOV_seed42_history.csv",
+      "bundled_sha256": "846f62b814e9920ef5d55f69e41f686a785857a879c8835d7c61deafb5e9f8ba",
+      "change": "byte-for-byte copy"
+    },
+    {
+      "relative_path": "homogeneous_validation/Homogeneous_SHAKHOV_seed42_metrics.json",
+      "source_path": "/project/pi_roohie_umass_edu/JFM_revision_2026/JFM_CORRECTED_V3/homogeneous_validation/Homogeneous_SHAKHOV_seed42_metrics.json",
+      "size": 858,
+      "sha256": "a98efaf57af0c0458ee6478904a2239df3c119a53d87f2e84b1615047690bffe",
+      "mtime": 1784723036.6022863,
+      "bundled_path": "validation/homogeneous/results/Homogeneous_SHAKHOV_seed42_metrics.json",
+      "bundled_sha256": "a98efaf57af0c0458ee6478904a2239df3c119a53d87f2e84b1615047690bffe",
+      "change": "byte-for-byte copy"
+    }
+  ]
+}

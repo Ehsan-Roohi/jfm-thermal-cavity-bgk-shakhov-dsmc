@@ -37,7 +37,7 @@ import numpy as np
 from numba import cuda
 
 
-SOLVER_VERSION = "2026-08-07-jfm-bgk-shakhov-restartable-v2"
+SOLVER_VERSION = "2026-10-22-jfm-bgk-shakhov-restartable-v3-pr23"
 RESTART_FORMAT_VERSION = 1
 
 MASS = 6.63e-26
@@ -431,7 +431,9 @@ def collide_shakhov_relaxation(
                 cz = new_vz - mean_w
                 c2 = cx * cx + cy * cy + cz * cz
                 c_dot_q = cx * qx + cy * qy + cz * qz
-                shape = c2 / (2.0 * theta + 1.0e-30) - 2.5
+                # q includes the physical one-half prefactor, so the polynomial
+                # is c^2/theta - 5. The old half-polynomial yielded Pr=5/6.
+                shape = c2 / (theta + 1.0e-30) - 5.0
                 weight = (
                     1.0
                     + correction_scale * (c_dot_q / denominator) * shape
@@ -669,6 +671,17 @@ class RelaxationQuarterCavity:
         ):
             raise ValueError(f"Incomplete or unsupported restart: {restart_dir}")
 
+        # The corrected collision model cannot continue accumulated fields
+        # or particle trajectories from the old half-strength Shakhov kernel.
+        if args.mode == "SHAKHOV" and manifest.get(
+            "shakhov_heat_flux_polynomial"
+        ) != "c2/theta-5":
+            raise ValueError(
+                "Incompatible Shakhov restart: corrected Pr=2/3 requires "
+                "a checkpoint generated with c2/theta-5. Start a new run; "
+                "do not mix historical half-strength samples."
+            )
+
         expected = {
             "model": args.mode,
             "seed": args.seed,
@@ -821,6 +834,9 @@ class RelaxationQuarterCavity:
             "complete": True,
             "restart_format_version": RESTART_FORMAT_VERSION,
             "solver_version": SOLVER_VERSION,
+            "shakhov_heat_flux_polynomial": (
+                "c2/theta-5" if args.mode == "SHAKHOV" else None
+            ),
             "model": args.mode,
             "Kn_paper": args.kn,
             "RT": args.rt,
@@ -1310,6 +1326,9 @@ def main():
         "relaxation_frequency": "n*pi*d^2*sqrt(pi*kB*T/m)",
         "prandtl_number": (
             None if args.mode == "BGK" else PRANDTL
+        ),
+        "shakhov_heat_flux_polynomial": (
+            "c2/theta-5" if args.mode == "SHAKHOV" else None
         ),
         "shakhov_weight_limiter": (
             None if args.mode == "BGK"

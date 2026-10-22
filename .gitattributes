@@ -1,3 +1,8 @@
 * text=auto eol=lf
 
 *.png binary
+
+# Preserve the exact recovered Unity CSV bytes and their recorded SHA-256.
+validation/fourier/corrected_results/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
+validation/fourier/hardsphere_results/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
+validation/homogeneous/results/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

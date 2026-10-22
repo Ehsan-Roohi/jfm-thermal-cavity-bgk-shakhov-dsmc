@@ -2,7 +2,9 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-python -m py_compile solver/*.py tools/*.py tests/*.py
+python -m py_compile solver/*.py tools/*.py tests/*.py validation/fourier/*.py validation/homogeneous/*.py
+python tests/test_shakhov_moments.py
+python tests/test_validation_bundle.py
 python tests/test_bundle.py
 python tests/test_restart_contract.py
 python tests/test_restart_roundtrip.py
