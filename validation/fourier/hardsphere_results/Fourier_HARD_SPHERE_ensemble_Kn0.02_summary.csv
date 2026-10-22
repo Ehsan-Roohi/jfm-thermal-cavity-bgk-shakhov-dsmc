@@ -1,0 +1,39 @@
+metric,value
+test,three-seed hard-sphere DSMC planar Fourier validation
+Kn_paper,0.02
+seeds,"[42, 271828, 314159]"
+number_of_independent_runs,3
+q_HS_bulk_mean_W_m2,893.189406165087
+q_HS_bulk_sample_sd_W_m2,4.66002524395707
+q_HS_bulk_standard_error_W_m2,2.6904668290290656
+q_HS_bulk_95pct_t_CI_W_m2,"[881.6132617184294, 904.7655506117446]"
+q_HS_wall_balanced_mean_W_m2,907.1780239932558
+q_HS_wall_balanced_sample_sd_W_m2,3.339557249238145
+q_HS_wall_balanced_standard_error_W_m2,1.9280942768218092
+q_HS_wall_balanced_95pct_t_CI_W_m2,"[898.8821038895621, 915.4739440969495]"
+q_HS_continuum_analytic_W_m2,958.1977691518044
+q_HS_bulk_relative_error_vs_continuum,0.0678444107047575
+q_HS_wall_relative_error_vs_continuum,0.05324552696852055
+conductivity_HS_mean_W_m_K,0.02382142006182444
+conductivity_HS_sample_sd_W_m_K,0.0003240654679622446
+conductivity_HS_standard_error_W_m_K,0.00018709928516306396
+conductivity_HS_95pct_t_CI_W_m_K,"[0.023016396811753135, 0.024626443311895747]"
+conductivity_HS_reference_mean_W_m_K,0.023957025845764635
+conductivity_HS_relative_error_vs_reference,0.005660376409543684
+wall_energy_imbalance_relative_mean,0.0023538557300216718
+bulk_q_spatial_cv_mean,0.010328608317202621
+majorant_updates_total,7211
+candidate_pairs_total,151476776793
+accepted_collisions_total,37708328641
+quantitative_profiles_are_unfiltered,True
+comparison_with_corrected_BGK_Shakhov_available,True
+conductivity_BGK_mean_W_m_K,0.015940858432547403
+conductivity_Shakhov_mean_W_m_K,0.02459182550466335
+conductivity_HS_over_BGK_mean_of_paired_ratios,1.4967861436619687
+conductivity_HS_over_BGK_paired_ratios,"[1.5090348590542317, 1.4137079741641736, 1.567615597767501]"
+conductivity_HS_over_BGK_theory,1.4726215563702154
+conductivity_Shakhov_over_HS_mean_of_paired_ratios,1.032694985142456
+conductivity_Shakhov_over_HS_paired_ratios,"[1.0103869835427242, 1.1208849106251784, 0.9668130612594663]"
+conductivity_Shakhov_over_HS_theory,1.0185916357881302
+bulk_q_HS_over_BGK_mean_of_paired_ratios,1.4161715721412886
+bulk_q_Shakhov_over_HS_mean_of_paired_ratios,0.9728773899574529

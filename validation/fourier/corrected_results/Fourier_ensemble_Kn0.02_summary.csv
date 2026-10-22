@@ -1,0 +1,29 @@
+metric,value
+test,corrected ensemble planar Fourier heat-conduction validation
+Kn_paper,0.02
+paired_seeds,"[42, 271828, 314159]"
+number_of_independent_pairs,3
+q_BGK_mean_W_m2,634.1627272368829
+q_BGK_sample_sd_W_m2,57.4186364295097
+q_BGK_standard_error_W_m2,33.15066519907868
+q_BGK_continuum_analytic_W_m2,650.674822059249
+q_BGK_relative_error_vs_analytic,0.02537687684012232
+q_Shakhov_mean_W_m2,868.915539752985
+q_Shakhov_sample_sd_W_m2,23.0513530830206
+q_Shakhov_standard_error_W_m2,13.308704907667055
+q_Shakhov_continuum_analytic_W_m2,976.0122330888736
+q_Shakhov_relative_error_vs_analytic,0.10972884325122657
+q_Shakhov_over_q_BGK,1.3701775623725885
+q_ratio_approx_95pct_CI,"[1.2238894277663754, 1.5164656969788015]"
+conductivity_BGK_mean_W_m_K,0.015940858432547403
+conductivity_BGK_sample_sd_W_m_K,0.0007666096948852738
+conductivity_Shakhov_mean_W_m_K,0.02459182550466335
+conductivity_Shakhov_sample_sd_W_m_K,0.0017369788558355456
+conductivity_Shakhov_over_BGK,1.5426914183274316
+conductivity_ratio_approx_95pct_CI,"[1.3935200775267216, 1.6918627591281417]"
+expected_1_over_Pr,1.5
+q_ratio_relative_deviation_from_1_over_Pr,0.08654829175160768
+conductivity_ratio_relative_deviation_from_1_over_Pr,0.02846094555162108
+pass_q_ratio_10_percent_tolerance,True
+pass_conductivity_ratio_10_percent_tolerance,True
+quantitative_profiles_are_unfiltered,True

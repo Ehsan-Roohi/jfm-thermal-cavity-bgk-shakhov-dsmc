@@ -140,6 +140,24 @@ def exercise(module, class_name, mode):
         for name in ("x", "y", "vx", "vy", "vz", "particle_rng"):
             assert np.array_equal(getattr(target, name), getattr(source, name))
 
+        if mode == "SHAKHOV":
+            assert manifest["shakhov_heat_flux_polynomial"] == "c2/theta-5"
+            for old_polynomial in (None, "c2/(2*theta)-2.5"):
+                incompatible = dict(manifest)
+                if old_polynomial is None:
+                    incompatible.pop("shakhov_heat_flux_polynomial")
+                else:
+                    incompatible["shakhov_heat_flux_polynomial"] = old_polynomial
+                (restart / "manifest.json").write_text(json.dumps(incompatible))
+                try:
+                    target.load_restart(restart)
+                except ValueError as error:
+                    assert "Incompatible Shakhov restart" in str(error)
+                else:
+                    raise AssertionError("Legacy Shakhov restart was accepted")
+            (restart / "manifest.json").write_text(json.dumps(manifest))
+            target.load_restart(restart)
+
 
 hs = load_module(
     ROOT / "solver/JFM_hs_dsmc_quarter.py", "restart_test_hs"

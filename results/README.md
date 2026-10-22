@@ -1,5 +1,21 @@
 # Result artifacts
 
+## Historical source status after the 2026-10-22 correction
+
+The existing `summary/` and `final_metrics/` files are unchanged historical
+outputs of the restartable-v2 sources pinned in `SOURCE_PROVENANCE.md`.
+That BGK/Shakhov source used the half-strength Shakhov heat-flux polynomial.
+Its Shakhov results are **not validated outputs of the corrected Pr=2/3 solver**.
+No corrected cavity rerun is included in this repair. HS and BGK collision
+formulas are not changed by the correction.
+
+Corrected three-seed Fourier evidence recovered from Unity is separately
+stored in `validation/fourier/corrected_results/` and `hardsphere_results/`.
+The two older Kn0.02 files directly under `validation/fourier/` are historical
+smoke artifacts, not the three-seed validation cited by the manuscript.
+The homogeneous validation evidence is under `validation/homogeneous/results/`.
+See `validation/README.md` for provenance and the limits of these checks.
+
 This repository includes compact evidence only. The full 80-million-particle
 restart directories and raw 3-million-step fields are multiple gigabytes per
 case and remain external to GitHub.

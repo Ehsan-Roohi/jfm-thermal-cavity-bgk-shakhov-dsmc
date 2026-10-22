@@ -22,7 +22,29 @@ import cupy as cp
 import numpy as np
 from numba import cuda
 
+# Resolve the recovered shared solver when launched from any directory.
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "solver"))
+
 import JFM_reviewer_quarter_domain as cavity
+
+SOLVER_VERSION = "2026-07-22-fourier-shakhov-v2"
+
+
+def continuum_fourier_reference(t_left, t_right, length, mode):
+    """Hard-sphere BGK/Shakhov Fourier-law reference for this code's nu.
+
+    With nu=n*sigma*sqrt(pi*k_B*T/m), the BGK conductivity is
+    k_BGK(T)=C*sqrt(T), C=5*k_B/(2*sigma)*sqrt(k_B/(pi*m)).
+    Shakhov multiplies it by 1/Pr.
+    """
+    c_bgk = (5.0*cavity.KB/(2.0*cavity.SIGMA)
+             * math.sqrt(cavity.KB/(math.pi*cavity.MASS)))
+    pr_model = 1.0 if mode == "BGK" else cavity.PRANDTL
+    q_reference = (2.0*c_bgk/(3.0*length*pr_model)
+                   * (t_left**1.5 - t_right**1.5))
+    return c_bgk, pr_model, q_reference
 
 
 @cuda.jit(fastmath=True)
@@ -43,24 +65,63 @@ def init_fourier(x, vx, vy, vz, seeds, length, temperature, mass, kb):
 
 
 @cuda.jit(fastmath=True)
-def move_fourier(x, vx, vy, vz, seeds, length, dt, t_left, t_right, mass, kb):
+def move_fourier(x, vx, vy, vz, seeds, length, dt,
+                 t_left, t_right, mass, kb):
+    """Advance to each diffuse-wall hit, then use the new velocity for the
+    residual time.  Mirroring a diffuse hit as though it were specular biases
+    the first-cell velocity and heat flux, especially in a low-signal run.
+    """
     i = cuda.grid(1)
     if i < x.size:
         state = seeds[i]
-        xn = x[i] + vx[i] * dt
-        if xn < 0.0:
-            xn = -xn
-            state, vxn, vyn, vzn = cavity.sample_diffuse_velocity(
-                state, t_left, mass, kb, 1.0, 0.0
-            )
-            vx[i], vy[i], vz[i] = vxn, vyn, vzn
-        elif xn > length:
-            xn = 2.0 * length - xn
-            state, vxn, vyn, vzn = cavity.sample_diffuse_velocity(
-                state, t_right, mass, kb, -1.0, 0.0
-            )
-            vx[i], vy[i], vz[i] = vxn, vyn, vzn
-        x[i] = xn
+        xp = x[i]
+        ax = vx[i]
+        ay = vy[i]
+        az = vz[i]
+        remaining = dt
+        eps = 1.0e-12 * length
+
+        # The CFL used here makes more than one hit extraordinarily unlikely,
+        # but the bounded loop also handles pathological high-speed particles.
+        for _hit in range(8):
+            if remaining <= 0.0:
+                break
+            thit = remaining + 1.0
+            side = 0
+            if ax < 0.0:
+                thit = -xp / ax
+                side = -1
+            elif ax > 0.0:
+                thit = (length - xp) / ax
+                side = 1
+
+            if side == 0 or thit < 0.0 or thit >= remaining:
+                xp += ax * remaining
+                remaining = 0.0
+                break
+
+            xp += ax * thit
+            remaining -= thit
+            if side < 0:
+                xp = eps
+                state, ax, ay, az = cavity.sample_diffuse_velocity(
+                    state, t_left, mass, kb, 1.0, 0.0
+                )
+            else:
+                xp = length - eps
+                state, ax, ay, az = cavity.sample_diffuse_velocity(
+                    state, t_right, mass, kb, -1.0, 0.0
+                )
+
+        if remaining > 0.0:
+            xp += ax * remaining
+        if xp < 0.0:
+            xp = eps
+        elif xp >= length:
+            xp = length - eps
+
+        x[i] = xp
+        vx[i], vy[i], vz[i] = ax, ay, az
         seeds[i] = state
 
 
@@ -95,6 +156,7 @@ def arguments():
     p.add_argument("--steps", type=int, default=200000)
     p.add_argument("--sample-start", type=int, default=50000)
     p.add_argument("--sample-every", type=int, default=2)
+    p.add_argument("--seed", type=int, default=42)
     p.add_argument("--output", default="fourier_validation")
     return p.parse_args()
 
@@ -116,7 +178,8 @@ def main():
     threads = cavity.THREADS
     bp = (npart+threads-1)//threads; bc = (nc+threads-1)//threads
 
-    seeds = cp.arange(npart, dtype=cp.uint64)*cp.uint64(2862933555777941757)+cp.uint64(42)
+    seeds = (cp.arange(npart, dtype=cp.uint64)*cp.uint64(2862933555777941757)
+             + cp.uint64(a.seed))
     x = cp.zeros(npart, cp.float64)
     vx = cp.zeros(npart, cp.float64); vy = cp.zeros_like(vx); vz = cp.zeros_like(vx)
     init_fourier[bp, threads](x, vx, vy, vz, seeds, length,
@@ -166,19 +229,54 @@ def main():
     xc = (np.arange(nc)+0.5)/nc
     interior = (xc >= 0.2) & (xc <= 0.8)
     qmean = float(np.mean(qx[interior]))
+    qstd = float(np.std(qx[interior], ddof=1))
+    qcv = qstd/max(abs(qmean), 1.0e-300)
+
+    c_bgk, pr_model, q_reference = continuum_fourier_reference(
+        a.t_left, a.t_right, length, a.mode
+    )
+    t_reference = (a.t_left**1.5
+                   + (a.t_right**1.5-a.t_left**1.5)*xc)**(2.0/3.0)
+    slope_k_per_x_over_l = float(np.polyfit(xc[interior], temp[interior], 1)[0])
+    conductivity_measured = -qmean*length/slope_k_per_x_over_l
+    t_mean_interior = float(np.mean(temp[interior]))
+    conductivity_reference_at_tmean = (c_bgk*math.sqrt(t_mean_interior)
+                                       / pr_model)
+    t_rmse = float(np.sqrt(np.mean((temp[interior]
+                                   - t_reference[interior])**2)))
 
     os.makedirs(a.output, exist_ok=True)
-    stem = os.path.join(a.output, f"Fourier_{a.mode}_Kn{a.kn:g}")
+    stem = os.path.join(a.output,
+                        f"Fourier_{a.mode}_Kn{a.kn:g}_seed{a.seed}")
     with open(stem+"_profile.csv", "w", newline="") as f:
-        w=csv.writer(f); w.writerow(("x_over_L","T_K","ux_mps","qx_W_m2"))
-        w.writerows(zip(xc,temp,ux,qx))
+        w=csv.writer(f)
+        w.writerow(("x_over_L", "T_K", "T_continuum_K", "ux_mps",
+                    "qx_W_m2", "qx_continuum_W_m2"))
+        w.writerows(zip(xc, temp, t_reference, ux, qx,
+                        np.full_like(xc, q_reference)))
     metrics = {
+        "solver_version": SOLVER_VERSION,
         "mode": a.mode, "Kn_paper": a.kn,
         "T_left_K": a.t_left, "T_right_K": a.t_right,
         "interior_mean_qx_W_m2": qmean,
+        "interior_spatial_std_qx_W_m2": qstd,
+        "interior_spatial_cv_qx": qcv,
+        "continuum_analytic_qx_W_m2": q_reference,
+        "relative_error_qx_vs_continuum": abs(qmean-q_reference)/abs(q_reference),
+        "interior_temperature_slope_K_per_x_over_L": slope_k_per_x_over_l,
+        "measured_conductivity_W_m_K_from_interior_slope": conductivity_measured,
+        "reference_conductivity_W_m_K_at_interior_mean_T": conductivity_reference_at_tmean,
+        "relative_error_conductivity": abs(conductivity_measured
+                                           - conductivity_reference_at_tmean)
+                                           / conductivity_reference_at_tmean,
+        "interior_temperature_RMSE_vs_continuum_K": t_rmse,
         "expected_q_shakhov_over_q_bgk_near_continuum": 1.5,
         "particles": npart, "cells": nc, "steps": a.steps,
+        "seed": a.seed,
         "samples": nsamples, "wall_clock_seconds": time.time()-t0,
+        "dt_seconds": dt, "n0_per_m3": n0, "FNUM": fnum,
+        "wall_advance_scheme": "event-driven time-of-impact with post-collision residual-time advance",
+        "quantitative_fields_are_unfiltered": True,
         "kn_definition": "1/(sqrt(2)*n0*pi*d^2*L)",
         "relaxation_frequency": "n*pi*d^2*sqrt(pi*kB*T/m)"
     }

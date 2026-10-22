@@ -1,5 +1,21 @@
 # Thermal rarefied-gas cavity: BGK, Shakhov, and DSMC
 
+## Shakhov correction and recovered validation on 2026-10-22
+
+The current restartable Shakhov solver uses `c2/theta - 5` with the physical
+heat flux `q = (m*n/2) <c2*c>`, restoring the intended Pr=2/3 coefficient.
+The old code used half that correction. Its results remain historical:
+this commit does not regenerate or certify the old cavity Shakhov fields.
+Old Shakhov checkpoints are rejected by the corrected solver to avoid mixing
+different collision models and accumulated samples. BGK restart compatibility
+is preserved.
+
+The missing shared validation module and the corrected Fourier, hard-sphere
+Fourier, and homogeneous test scripts were recovered from Unity with SHA-256
+verification. See [validation instructions](validation/README.md) and
+[source provenance](SOURCE_PROVENANCE.md). The old two-case Fourier smoke
+evidence remains distinct from the recovered three-seed validation.
+
 GPU-accelerated particle solvers and compact reproducibility evidence for the
 accepted manuscript:
 
@@ -7,9 +23,11 @@ accepted manuscript:
 > rarefied gas flow in a square cavity: From near-free-molecular to
 > near-continuum conditions,” accepted at *Journal of Fluid Mechanics*.
 
-The repository contains the restartable solver bytes used for the final production runs, the seven case
-definitions, Slurm launch scripts, restart-contract tests, Fourier-flow
-validation, and compact result summaries. Multi-gigabyte particle restart
+The repository contains corrected restartable solvers, seven historical case
+definitions, Slurm launch scripts, restart-contract tests, recovered Fourier
+validation, and compact historical result summaries. The exact source hashes
+used by historical runs are preserved in SOURCE_PROVENANCE.md and Git history.
+Multi-gigabyte particle restart
 states and raw fields remain on the cluster and are intentionally excluded.
 
 ## Models
@@ -25,7 +43,7 @@ domain is a stationary thermal square cavity. Production runs use one-quarter
 of the domain with specular symmetry planes and reconstruct the full
 `200 x 200` field.
 
-## Final reviewer cases
+## Historical final reviewer cases
 
 | Figure | Model | Kn | RT = Tc/Th | Particles | Final steps |
 | --- | --- | ---: | ---: | ---: | ---: |

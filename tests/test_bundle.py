@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_SHA = {
     "solver/JFM_hs_dsmc_quarter.py": "2c9e2f5119802b123f0335664a564085cfe77682ae4f4af4138dc31f5876b166",
-    "solver/JFM_bgk_shakhov_quarter.py": "f2f97526942c53eca0af6dd9b94aca541f06951db4755a92cc8fb11e5e0e65a2",
+    "solver/JFM_bgk_shakhov_quarter.py": "e05ffd201443333143ceb3ce6b86c34eb30d228863fe42cacdfd1f878b32fcd1",
 }
 for relative, expected in EXPECTED_SHA.items():
     assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == expected
